@@ -8,8 +8,6 @@ A simple REST API created using Node.js and Express.js framework, to generate Fi
 - `npm install` to install all required dependencies
 - `npm start` to start the local server
 
-See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 - Node.js
@@ -24,11 +22,25 @@ https://docs.docker.com/get-docker/
 
 ## Building Docker Image
 
-- Work in progress -
+Run the following command in the root directory of the project
+```
+docker build --tag yourusername/repository-name .
+````
 
-## Deployment with Docker
+For example:
+```
+docker build --tag simkailong/fibonacci .
+````
 
-- Work in progress -
+## Running the Docker Container
+
+```
+docker run -p 8080:8080 -d yourusername/repository-name
+```
+For example:
+```
+docker run -p 8080:8080 -d simkailong/fibonacci
+````
 
 ## Built With
 
