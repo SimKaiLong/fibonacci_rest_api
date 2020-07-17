@@ -35,11 +35,11 @@ docker build --tag simkailong/fibonacci .
 ## Running the Docker Container
 
 ```
-docker run -p 8080:8080 -d yourusername/repository-name
+docker run -p 8000:8000 -d yourusername/repository-name
 ```
 For example:
 ```
-docker run -p 8080:8080 -d simkailong/fibonacci
+docker run -p 8000:8000 -d simkailong/fibonacci
 ````
 
 ## Built With
