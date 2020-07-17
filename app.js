@@ -7,7 +7,6 @@ const logger = require('morgan');
 const fibonacciRouter = require('./routes/fibonacci');
 
 const app = express();
-const PORT = 5000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
