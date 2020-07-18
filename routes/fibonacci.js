@@ -2,10 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 /* GET Fibonacci Sequence */
-router.get('/', function(req, res, next) {
-    const num_elements = req.body.elements
+router.get('/', function (req, res, next) {
+    let num_elements = null;
+    if (req.query.elements) {
+        num_elements = req.query.elements
+        // console.log(req.query.elements)
+    } else {
+        num_elements = req.body.elements
+        // console.log(req.body.elements)
+    }
+
     if (1 <= num_elements && num_elements <= 100) {
-        const fibonacci = fibonacciSeries(num_elements-1);
+        const fibonacci = fibonacciSeries(num_elements - 1);
 
         /* Sort the  sequence generated, in the following manner:
         *  Even numbers first, in descending order,
@@ -37,8 +45,8 @@ const fibonacciSeries = function (n) {
     /* If the number of elements to generate is greater than 2, use a
     *  for-loop to iteratively add elements into the result array
     * */
-    for (let i = 2; i < n + 1; i++){
-        arr.push(arr[i - 2] + arr[i -1])
+    for (let i = 2; i < n + 1; i++) {
+        arr.push(arr[i - 2] + arr[i - 1])
     }
 
     return arr
